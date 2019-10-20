@@ -54,3 +54,21 @@ deploy:
     force_update: true
     on:
       appveyor_repo_tag: true
+
+artifacts:
+# файлы-артефакты нужно предварительно явноуказать в данной секции
+# в терминологии AppVeyor это называется "push
+artifacts:
+    - path: file1.pkg
+    - path: file2.pkg
+    - ...
+deploy:
+    provider: GitHub # выкладываем на GitHub
+Releases
+    description: '$(APPVEYOR_REPO_TAG_NAME)' # tag как имя релиза (на Travis так по умолчанию)
+    auth_token:
+        secure: <secret-github-token> # токен, зашифрованный на сайте appveyor.ci
+    artifact: /.*\.pkg/ # регулярное выражение, описывающее все артефакты данного релиза
+    force_update: true # перезаписывать артефакты, если файл с таким именем уже имеется
+    on:
+        appveyor_repo_tag: true # выполнять deploy только для tagged-commit

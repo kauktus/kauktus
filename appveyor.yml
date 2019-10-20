@@ -10,7 +10,7 @@ clone_folder: c:\projects\my-prj
 shallow_clone: true 
 # копируем только последний коммит, без истории  (git clone --depth 1)
 matrix:
-fast_finish: false 
+    fast_finish: false 
 # не останавливаемся после возникновения ошибки в каком-то из заданий
 platform:
 # будем гонять CI на amd64 и x86...

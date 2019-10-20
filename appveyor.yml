@@ -43,7 +43,7 @@ test_script:
     - ctest -C %CONFIGURATION% --output-on-failure
 artifacts:
     - path: <local-package-path>
-    name: package_name
+      name: package_name
 deploy:
 # выкладываем tagged-коммиты на GitHub Releases:
     description: '$(APPVEYOR_REPO_TAG_NAME)'

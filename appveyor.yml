@@ -57,8 +57,7 @@ deploy:
 
 artifacts:
 # файлы-артефакты нужно предварительно явноуказать в данной секции
-# в терминологии AppVeyor это называется "push
-artifacts:
+# в терминологии AppVeyor это называется "push artifacts:
     - path: file1.pkg
     - path: file2.pkg
     - ...
